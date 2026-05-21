@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi QR</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="top-button">
+        <button>🌙 Modo oscuro</button>
+    </div>
+
+    <div class="main-title">
+        <h1>CONECTA A NUESTRA RED WI-FI</h1>
+        <p>Escanea el código QR o copia la contraseña</p>
+    </div>
+
+    <div class="container">
+
+        <!-- CARD IZQUIERDA -->
+        <div class="card">
+
+            <div class="icon">📶</div>
+
+            <h2>CONECTAR AUTOMÁTICAMENTE</h2>
+
+            <p class="description">
+                Escanea este código QR con la cámara de tu teléfono.
+            </p>
+
+            <img src="/static/wifi_qr.png" alt="QR WiFi">
+
+            <p class="small-text">
+                Compatible con Android y iPhone
+            </p>
+
+        </div>
+
+        <!-- CARD DERECHA -->
+        <div class="card">
+
+            <div class="icon">🔑</div>
+
+            <h2>CONTRASEÑA DE LA RED</h2>
+
+            <p class="description">
+                Copia y pega la contraseña manualmente.
+            </p>
+
+            <div class="password-box">
+
+                <input
+                    type="text"
+                    value="{{ wifi_password }}"
+                    id="password"
+                    readonly>
+
+                <button onclick="copyPassword()">
+                    COPIAR
+                </button>
+
+            </div>
+
+            <div class="info">
+
+                <div>
+                    <span>Nombre de la red</span>
+                    <h3>{{ wifi_name }}</h3>
+                </div>
+
+                <div>
+                    <span>Seguridad</span>
+                    <h3>WPA/WPA2</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Hecho con ❤️ para tus visitas
+    </div>
+
+    <script>
+
+        function copyPassword() {
+
+            let pass = document.getElementById("password");
+
+            navigator.clipboard.writeText(pass.value);
+
+            alert("Contraseña copiada");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
