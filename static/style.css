@@ -4,6 +4,10 @@
     box-sizing:border-box;
 }
 
+html,body{
+    overflow-x:hidden;
+}
+
 body{
 
     font-family:Arial, Helvetica, sans-serif;
@@ -15,60 +19,22 @@ body{
 
     min-height:100vh;
 
-    padding:40px;
+    padding:40px 20px;
 
-    /* 🔥 CENTRADO PRINCIPAL */
     display:flex;
     flex-direction:column;
     align-items:center;
+
+    overflow-x:hidden;
 }
 
-/* CONTENEDORES CENTRADOS */
+/* CONTENEDORES */
+
 .main-title,
 .container,
-.footer {
+.footer{
     width:100%;
     max-width:1200px;
-}
-
-/* BOTON SUPERIOR */
-
-.top-button{
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    margin-bottom:40px;
-
-    width:100%;
-    max-width:1200px;
-}
-
-.top-button button{
-
-    background:transparent;
-
-    border:1px solid #00d9ff;
-
-    color:#00d9ff;
-
-    padding:12px 25px;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    font-size:16px;
-
-    transition:0.3s;
-}
-
-.top-button button:hover{
-
-    background:#00d9ff;
-
-    color:black;
 }
 
 /* TITULO */
@@ -82,7 +48,9 @@ body{
 
 .main-title h1{
 
-    font-size:55px;
+    font-size:clamp(28px, 6vw, 55px);
+
+    line-height:1.1;
 
     background:linear-gradient(
         90deg,
@@ -99,6 +67,8 @@ body{
     margin-bottom:15px;
 
     font-weight:bold;
+
+    word-wrap:break-word;
 }
 
 .main-title p{
@@ -119,13 +89,17 @@ body{
     gap:40px;
 
     flex-wrap:wrap;
+
+    width:100%;
 }
 
 /* CARDS */
 
 .card{
 
-    width:500px;
+    width:100%;
+
+    max-width:500px;
 
     background:rgba(15,23,42,0.85);
 
@@ -150,7 +124,7 @@ body{
     margin-bottom:20px;
 }
 
-/* TITULOS DE CARD */
+/* TITULOS */
 
 .card h2{
 
@@ -159,9 +133,11 @@ body{
     margin-bottom:15px;
 
     font-size:30px;
+
+    line-height:1.2;
 }
 
-/* TEXTO */
+/* DESCRIPCION */
 
 .description{
 
@@ -202,7 +178,7 @@ img{
     font-size:16px;
 }
 
-/* CONTRASEÑA */
+/* PASSWORD */
 
 .password-box{
 
@@ -216,6 +192,8 @@ img{
 input{
 
     flex:1;
+
+    width:100%;
 
     padding:18px;
 
@@ -232,7 +210,7 @@ input{
     outline:none;
 }
 
-/* BOTON COPIAR */
+/* BOTON */
 
 .password-box button{
 
@@ -251,6 +229,8 @@ input{
     font-weight:bold;
 
     transition:0.3s;
+
+    white-space:nowrap;
 }
 
 .password-box button:hover{
@@ -258,7 +238,7 @@ input{
     background:#22d3ee;
 }
 
-/* INFO EXTRA */
+/* INFO */
 
 .info{
 
@@ -285,6 +265,8 @@ input{
     font-size:28px;
 
     color:white;
+
+    word-break:break-word;
 }
 
 /* FOOTER */
@@ -300,7 +282,9 @@ input{
     font-size:18px;
 }
 
-/* RESPONSIVE */
+/* ========================= */
+/* TABLETS */
+/* ========================= */
 
 @media(max-width:1100px){
 
@@ -314,11 +298,138 @@ input{
     .card{
 
         width:100%;
-        max-width:600px;
+        max-width:700px;
     }
 
     .main-title h1{
 
         font-size:42px;
+    }
+}
+
+/* ========================= */
+/* CELULARES */
+/* ========================= */
+
+@media(max-width:768px){
+
+    body{
+
+        padding:25px 15px;
+    }
+
+    .main-title{
+
+        margin-bottom:40px;
+    }
+
+    .main-title h1{
+
+        font-size:34px;
+    }
+
+    .main-title p{
+
+        font-size:18px;
+
+        line-height:1.5;
+    }
+
+    .container{
+
+        gap:25px;
+    }
+
+    .card{
+
+        width:100%;
+
+        padding:25px;
+    }
+
+    .card h2{
+
+        font-size:24px;
+    }
+
+    .description{
+
+        font-size:16px;
+    }
+
+    .password-box{
+
+        flex-direction:column;
+    }
+
+    input{
+
+        font-size:18px;
+    }
+
+    .password-box button{
+
+        width:100%;
+    }
+
+    .info h3{
+
+        font-size:22px;
+    }
+
+    .footer{
+
+        font-size:15px;
+
+        margin-top:40px;
+    }
+}
+
+/* ========================= */
+/* CELULARES PEQUEÑOS */
+/* ========================= */
+
+@media(max-width:480px){
+
+    .main-title h1{
+
+        font-size:28px;
+    }
+
+    .main-title p{
+
+        font-size:16px;
+    }
+
+    .card{
+
+        padding:20px;
+    }
+
+    .card h2{
+
+        font-size:21px;
+    }
+
+    input{
+
+        font-size:16px;
+
+        padding:15px;
+    }
+
+    .password-box button{
+
+        padding:15px;
+    }
+
+    .info h3{
+
+        font-size:19px;
+    }
+
+    .icon{
+
+        font-size:38px;
     }
 }
