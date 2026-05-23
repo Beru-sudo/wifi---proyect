@@ -2,27 +2,31 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>WiFi QR</title>
 
     <link rel="stylesheet" href="/static/style.css">
+
 </head>
 
 <body>
 
-    <div class="top-button">
-        <button>🌙 Modo oscuro</button>
-    </div>
-
     <div class="main-title">
+
         <h1>CONECTA A NUESTRA RED WI-FI</h1>
+
         <p>Escanea el código QR o copia la contraseña</p>
+
     </div>
 
     <div class="container">
 
         <!-- CARD IZQUIERDA -->
+
         <div class="card">
 
             <div class="icon">📶</div>
@@ -33,8 +37,9 @@
                 Escanea este código QR con la cámara de tu teléfono.
             </p>
 
-            <!-- 🔥 QR ACTUALIZADO -->
-            <img src="{{ url_for('static', filename='qrWifi.png') }}" alt="QR WiFi">
+            <img
+                src="{{ url_for('static', filename='qrWifi.png') }}"
+                alt="QR WiFi">
 
             <p class="small-text">
                 Compatible con Android y iPhone
@@ -43,6 +48,7 @@
         </div>
 
         <!-- CARD DERECHA -->
+
         <div class="card">
 
             <div class="icon">🔑</div>
@@ -70,13 +76,19 @@
             <div class="info">
 
                 <div>
+
                     <span>Nombre de la red</span>
+
                     <h3>{{ wifi_name }}</h3>
+
                 </div>
 
                 <div>
+
                     <span>Seguridad</span>
+
                     <h3>WPA/WPA2 - Personal</h3>
+
                 </div>
 
             </div>
