@@ -132,9 +132,11 @@ body{
 
     margin-bottom:15px;
 
-    font-size:30px;
+    font-size:clamp(22px, 5vw, 30px);
 
     line-height:1.2;
+
+    word-break:break-word;
 }
 
 /* DESCRIPCION */
@@ -187,6 +189,8 @@ img{
     gap:15px;
 
     margin-bottom:40px;
+
+    width:100%;
 }
 
 input{
@@ -194,6 +198,8 @@ input{
     flex:1;
 
     width:100%;
+
+    min-width:0;
 
     padding:18px;
 
@@ -349,7 +355,7 @@ input{
 
     .card h2{
 
-        font-size:24px;
+        font-size:26px;
     }
 
     .description{
@@ -364,7 +370,7 @@ input{
 
     input{
 
-        font-size:18px;
+        font-size:16px;
     }
 
     .password-box button{
@@ -408,12 +414,12 @@ input{
 
     .card h2{
 
-        font-size:21px;
+        font-size:22px;
     }
 
     input{
 
-        font-size:16px;
+        font-size:15px;
 
         padding:15px;
     }
